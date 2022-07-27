@@ -113,6 +113,69 @@ def zoom(image1, standard_dim):
     return image_data
 
 
+# data_list1 = []
+# data_list2 = []
+# data_list3 = []
+# data_array = pickle.load(open('../data/train_data.pkl', "rb"))
+# standard_dim = (160,160,20)
+# data = get_single(data_array, 'ADC')
+
+# for i in range(len(data_array)):
+#     try:
+#         image1 = sitk.ReadImage(data[0][i]) # Loads proxy image
+
+#         # Resize image (spline interpolation)
+#         image_data = zoom(image1, standard_dim)
+#         ## 对影像进行差值处理，从而实现改变图片大小
+#         # Convert image data to a tensor
+#         image_data_tensor1 = torch.Tensor(image_data)
+#         image_data_tensor1 = image_data_tensor1.view(1,standard_dim[0],standard_dim[1],standard_dim[2])
+
+#     except:
+#         image_data_tensor1 = torch.zeros(1,standard_dim[0], standard_dim[1], standard_dim[2])
+
+#     try:
+#         image2 = sitk.ReadImage(data[0][i]) # Loads proxy image
+
+#         # Resize image (spline interpolation)
+#         image_data = zoom(image2, standard_dim)
+#         ## 对影像进行差值处理，从而实现改变图片大小
+#         # Convert image data to a tensor
+#         image_data_tensor2 = torch.Tensor(image_data)
+#         image_data_tensor2 = image_data_tensor2.view(1,standard_dim[0],standard_dim[1],standard_dim[2])
+
+#     except:
+#         image_data_tensor2 = torch.zeros(1,standard_dim[0], standard_dim[1], standard_dim[2])
+#     try:
+#         image3 = sitk.ReadImage(data[0][i]) # Loads proxy image
+
+#         # Resize image (spline interpolation)
+#         image_data = zoom(image3, standard_dim)
+#         ## 对影像进行差值处理，从而实现改变图片大小
+#         # Convert image data to a tensor
+#         image_data_tensor3 = torch.Tensor(image_data)
+#         image_data_tensor3 = image_data_tensor3.view(1,standard_dim[0],standard_dim[1],standard_dim[2])
+
+#     except:
+
+#         image_data_tensor3 = torch.zeros(1,standard_dim[0], standard_dim[1], standard_dim[2])
+    
+#     data_list1.append(image_data_tensor1)
+#     data_list2.append(image_data_tensor2)
+#     data_list3.append(image_data_tensor3)
+
+# data_list1.shape
+
+# images_tensor1 = torch.stack(data_list1,dim=0)
+# images_tensor2 = torch.stack(data_list2,dim=0)
+# images_tensor3 = torch.stack(data_list3,dim=0)
+
+# images_tensor1.shape
+
+# images_tensor2.shape
+
+# images_tensor3.shape
+
 
 class MRIData(Dataset):
 
@@ -212,4 +275,3 @@ class MRIData(Dataset):
 
 # images_tensor.shape
 # images_tensor[0][0].shape
-
